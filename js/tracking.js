@@ -5,7 +5,6 @@ $jppc(document).ready(function() {
     alert(url);
     if (this.href.substr(0,7) != "http://" && this.href.substr(0,8) != "https://" ) { 
       var url = this.href.substr(this.href.lastIndexOf("/") + 1);
-      alert(url);
       //var url = this.href; // uncommend this to record full paths
       var ext = url.substr(url.lastIndexOf(".") + 1).toLowerCase();
       if ($jppc.inArray(ext, filetypes) > -1) {
