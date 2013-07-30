@@ -1,7 +1,19 @@
 <html>
 <head>
-  <title>put the GA tracking code at the bottom of the header</title>
+  <title>wcf tracking</title>
+  <script src="http://www.womenandchildrenfirst.org.uk/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/media/system/js/core.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/plugins/content/attachments/attachments_refresh.js" type="text/javascript"></script>
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/ppc.safejquery.start.js" type="text/javascript"></script>
   <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/jquery-1.5.min.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/ppc.safejquery.end.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/ppc.safejqueryplugin.start.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/jquery.cycle.all.2.74.js" type="text/javascript"></script>
+  <script src="http://www.womenandchildrenfirst.org.uk/modules/mod_ppc_simple_spotlight/js/ppc.safejqueryplugin.end.js" type="text/javascript"></script>
+
   <script src="js/tracking.js" type="text/javascript"></script>
 
   <script type="text/javascript">
@@ -30,6 +42,8 @@ Some links to files:
 <li><a href="test.pdf">test.pdf</a></li>
 </ul>
 
+
+<p>It looks like there is a bit of namespace conflict between jquery and mootools, so am using $jpcc</p> 
 
 <p>"One of the main advantages of the asynchronous snippet is that you can position it at the top of the HTML document. This increases the likelihood that the tracking beacon will be sent before the user leaves the page. It is customary to place JavaScript code in the <head> section, and we recommend placing the snippet at the bottom of the <head> section for best performance." <a href="https://support.google.com/analytics/answer/1008080">https://support.google.com/analytics/answer/1008080</a></p>
 
