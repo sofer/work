@@ -6,8 +6,8 @@ $jppc(document).ready(function() {
       var url = this.href.substr(this.href.lastIndexOf("/") + 1);
       //var url = this.href; // uncommend this to record full paths
       var ext = url.substr(url.lastIndexOf(".") + 1).toLowerCase();
+      alert(url);
       if ($jppc.inArray(ext, filetypes) > -1) {
-        alert(url);
         return "_gaq.push(['_trackPageview', '" + url + "']);"
       }
     }
