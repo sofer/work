@@ -37,13 +37,30 @@ A page with google tracking code
 
 Some links to files:
 <ul>
-<li><a href="test.PDF" onClick="_gaq.push(['_trackPageview','test.PDF']);">test.PDF with trackPageview</a></li>
-<li><a href="test.PDF" onClick="_gaq.push(['_trackEvent','PDF','open', 'test']);">test.PDF with trackevent</a></li>
-<li><a href="test.pdf">test.pdf</a></li>
+  <ul><a href="test.pdf">link to non-existent file: test.pdf</a></ul>
+  <ul><a href="test.ppt">link to non-existent file: test.ppt</a></ul>
+  <ul><a href="test.doc">link to non-existent file: test.doc</a></ul>
+  <ul><a href="test.docx">link to non-existent file: test.docx</a></ul>
+  <ul><a href="test.pptx">link to non-existent file: test.pptx</a></ul>
+  <ul><a href="test.xls">link to non-existent file: test.xls</a></ul>
+  <ul><a href="test.xlsx">link to non-existent file: test.xlsx</a></ul>
+  <ul><a href="test.PDF">link to non-existent file: test.PDF</a></ul>
+  <ul><a href="test.pDf">link to non-existent file: test.pDf</a></ul>
+  <ul><a href="test.xxx">link to non-existent and untracked file: test.xxx</a></ul>
 </ul>
 
+<h3>Notes</h3>
+<p>It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p> 
 
-<p>It looks like there is a bit of namespace conflict between jquery and mootools, so am using $jpcc</p> 
+<p>To add tracking for files, simply place</p> 
+
+<code>&lt;script src=&quot;&lt;path-to-js-files&gt;/tracking.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code>
+
+<p>inside the head tags at any point after loading jquery.</p>
+
+<p>The list of file paths is on the first line of the tracking.js file and can be amended. Use lower case only. pdf, ppt, doc, docx, pptx, xls and xlsx are all currently recognised.</p>
+
+<p>We are currently using just file names to identify files. If we want the full virtual path of a document to show up in google analytics, then there is a commented-out line that can be uncommented in tracking.js. Any fully-qualified href attribute (starting "http://" or "https://") will be ignored for tracking purposes.</p>
 
 <p>"One of the main advantages of the asynchronous snippet is that you can position it at the top of the HTML document. This increases the likelihood that the tracking beacon will be sent before the user leaves the page. It is customary to place JavaScript code in the <head> section, and we recommend placing the snippet at the bottom of the <head> section for best performance." <a href="https://support.google.com/analytics/answer/1008080">https://support.google.com/analytics/answer/1008080</a></p>
 
