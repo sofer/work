@@ -1,3 +1,3 @@
-$(document).ready(function() {
+$jppc(document).ready(function() {
   $("a").attr("onClick", "blah");
 })
