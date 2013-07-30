@@ -1,5 +1,20 @@
 <html>
 <head>
+  <title>put the GA tracking code at the bottom of the header</title>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1925910-3']);
+    _gaq.push(['_setDomainName', 'sofer.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
   
 </head>
 <body>
@@ -7,23 +22,14 @@ A page with google tracking code
 
 Some links to files:
 <ul>
-<li><a href="test.PDF" onClick="_gaq.push(['_trackEvent','PDF','open', 'test']);">test.PDF</a></li>
+<li><a href="test.PDF" onClick="_gaq.push(['_trackPageview','test.PDF']);">test.PDF with trackPageview</a></li>
+<li><a href="test.PDF" onClick="_gaq.push(['_trackEvent','PDF','open', 'test']);">test.PDF with trackevent</a></li>
 <li><a href="test.pdf">test.pdf</a></li>
 </ul>
 
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1925910-3']);
-  _gaq.push(['_setDomainName', 'sofer.com']);
-  _gaq.push(['_trackPageview']);
+<p>"One of the main advantages of the asynchronous snippet is that you can position it at the top of the HTML document. This increases the likelihood that the tracking beacon will be sent before the user leaves the page. It is customary to place JavaScript code in the <head> section, and we recommend placing the snippet at the bottom of the <head> section for best performance." <a href="https://support.google.com/analytics/answer/1008080">https://support.google.com/analytics/answer/1008080</a></p>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
 
-</script>
 </body>
 </html>
