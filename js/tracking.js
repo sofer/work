@@ -1,4 +1,4 @@
-var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"]
+var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"];
 
 $jppc(document).ready(function() {
   $jppc("a").attr("onClick", function() {
