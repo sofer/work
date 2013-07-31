@@ -1,5 +1,5 @@
-var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"];
 var host = "blog.sofer.com";
+var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"];
 
 $jppc(document).ready(function() {
   $jppc("a").attr("onClick", function() {
