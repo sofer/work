@@ -20,6 +20,7 @@
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-1925910-3']);
+    _gaq.push(['_setDomainName', 'sofer.com']);
     _gaq.push(['_trackPageview']);
 
     (function() {
@@ -49,22 +50,19 @@
 </ul>
 
 <h3>Notes</h3>
-<p>It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p> 
-
-<p>To add tracking for files, simply place</p> 
+<p>To add tracking for files, simply place <a href="js/tracking.js">tracking.js</a> inside the head tags at any point after loading jquery as follows:</p> 
 
 <code>&lt;script src=&quot;&lt;path-to-js-files&gt;/tracking.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code>
 
-<p>inside the head tags at any point after loading jquery and change the first line of tracking.js to the appropriate host name.</p>
+<p>And change the first line of tracking.js to the appropriate host name.</p>
 
-<p>The list of file paths is on the second line of the tracking.js file and can be amended. Use lower case only. pdf, ppt, doc, docx, pptx, xls and xlsx are all currently recognised.</p>
+<p>The list of file paths is on the second line of the tracking.js file and can be amended. Use lower case only in the definitions (although the files themselves can be upper or mixed case, too). pdf, ppt, doc, docx, pptx, xls and xlsx are all currently recognised.</p>
 
 <p>We are currently using just file names to identify files. If we want the full virtual path of a document to show up in google analytics, then there is a commented-out line that can be uncommented in tracking.js. Any links outside the current host will be ignored for tracking purposes.</p>
 
 <p>This page will need to be loaded onto the womenandchildrenfirst.org.uk domain, in order for google to track file clicks.</p>
 
-<p>"One of the main advantages of the asynchronous snippet is that you can position it at the top of the HTML document. This increases the likelihood that the tracking beacon will be sent before the user leaves the page. It is customary to place JavaScript code in the <head> section, and we recommend placing the snippet at the bottom of the <head> section for best performance." <a href="https://support.google.com/analytics/answer/1008080">https://support.google.com/analytics/answer/1008080</a></p>
-
+<p>It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p> 
 
 </body>
 </html>
