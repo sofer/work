@@ -4,7 +4,7 @@ var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"];
 $jppc(document).ready(function() {
   $jppc("a").attr("onClick", function() {
     if (this.host == host) { // ignore external links
-      pathStartIndex = host.length() + 7;
+      pathStartIndex = host.length + 7;
       var url = this.href.substr(pathStartIndex);
       //var url = this.href.substr(this.href.lastIndexOf("/") + 1);
       //var url = this.href; // uncommend this to record full paths
