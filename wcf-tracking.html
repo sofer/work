@@ -23,6 +23,12 @@
   <script src="/plugins/content/attachments/attachments_refresh.js" type="text/javascript"></script>
   <script src="//connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script>
   <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+  <script src="/modules/mod_ppc_simple_spotlight/js/ppc.safejquery.start.js" type="text/javascript"></script>
+    <script src="/modules/mod_ppc_simple_spotlight/js/jquery-1.5.min.js" type="text/javascript"></script>
+    <script src="/modules/mod_ppc_simple_spotlight/js/ppc.safejquery.end.js" type="text/javascript"></script>
+    <script src="/modules/mod_ppc_simple_spotlight/js/ppc.safejqueryplugin.start.js" type="text/javascript"></script>
+    <script src="/modules/mod_ppc_simple_spotlight/js/jquery.cycle.all.2.74.js" type="text/javascript"></script>
+    <script src="/modules/mod_ppc_simple_spotlight/js/ppc.safejqueryplugin.end.js" type="text/javascript"></script>
   <script type="text/javascript">
 window.addEvent('load', function() {
 				new JCaption('img.caption');
@@ -226,7 +232,7 @@ window.addEvent('load', function() {
 </ul>
 
 <h3>Notes</h3>
-<p>To add tracking for files, simply place **<a href="https://github.com/sofer/work/blob/gh-pages/js/tracking.js"><u>tracking.js</u></a>** inside the head tags at any point after loading jquery as follows:</p> 
+<p>To add tracking for files, simply place **<a href="https://github.com/sofer/work/blob/gh-pages/js/tracking.js"><u>tracking.js</u></a>** inside the head tags at any point after loading jQuery as follows:</p> 
 
 <code>&lt;script src=&quot;&lt;path-to-js-files&gt;/tracking.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code>
 
@@ -234,7 +240,7 @@ window.addEvent('load', function() {
 
 <p>Any links outside the current host will be ignored for tracking purposes.</p>
 
-<p>tracking.js relies on the presence of jQuery and the GA library. It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p>
+<p>tracking.js relies on the presence of jQuery and the GA library. Now, jQuery does not appear to be loaded onto every page and it looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $. If you would rather not use jQuery, we could re-code using MooTools.</p>
 
 <p>We have also moved the GA code--which is invoked asynchronously--to the bottom of the header and added a call to &lt;ga_social_tracking.js&gt;.</p>
 
