@@ -1,6 +1,6 @@
 var filetypes = ["pdf", "ppt", "doc", "docx", "pptx", "xls", "xlsx"];
 
-$(document).ready(function($) {
+$jpcc(document).ready(function($) {
 
   $("a").attr("onClick", function() {
     if (this.host == Document.domain) {         // ignore external links
