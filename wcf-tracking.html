@@ -230,8 +230,6 @@ window.addEvent('load', function() {
 
 <code>&lt;script src=&quot;&lt;path-to-js-files&gt;/tracking.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code>
 
-<p>Remove the second line of tracking.js and uncomment the third line. Then add tracking.js to any page on which you want GA to work.</p></p>
-
 <p>The list of file paths is on the first line of the tracking.js file and can be amended. Use lower case only in the definitions (although the files themselves can be upper or mixed case, too). pdf, ppt, doc, docx, pptx, xls and xlsx are all currently recognised.</p>
 
 <p>Any links outside the current host will be ignored for tracking purposes.</p>
@@ -240,7 +238,7 @@ window.addEvent('load', function() {
 
 <p>We have also moved the GA code--which is invoked asynchronously--to the bottom of the header and added a call to &lt;ga_social_tracking.js&gt;.</p>
 
-<p>At present, the Facebook 'like' button has been embedded synchronously. It is possible that you may want to change this in future, but for now  
+<p>At present, the Facebook 'like' button has been embedded synchronously (it is also generating the warning: "FB.getLoginStatus() called before calling FB.init(). "). It is possible that you may want to change this in future, but for now  
 a call to <code>_ga.trackFacebook();</code> can added just before the closing &lt;body&gt; tag. See also <a href="https://developers.facebook.com/docs/reference/javascript/"><u>these notes on adding facebook to a page</u></a>.</p>
 
 <p>Meanwhile, from the Google developers website: <em>"Google Analytics provides integrated reporting for the Google+ Badge and +1 Button. This means if you have implemented ga.js and either a +1 Button or Google+ Badge on the same page, all +1 and Badge social interactions will be automatically reported"</em>. See more <a href="https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSocial"><u>here</u></a>.
