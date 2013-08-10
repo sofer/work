@@ -8,6 +8,7 @@ $jppc(document).ready(function($) {
       pathStartIndex = host.length + 7;     // ignore first part of the href
       var path = this.href.substr(pathStartIndex);
       var ext = path.substr(path.lastIndexOf(".") + 1).toLowerCase();
+      alert('this should work: '+path);
       if ($.inArray(ext, filetypes) > -1) { // -1 means item not in array
         return "_gaq.push(['_trackPageview', '" + path + "']);"
       }
