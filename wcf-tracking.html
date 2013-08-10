@@ -55,21 +55,36 @@ window.addEvent('load', function() {
 <meta property="my:google" content="on"/>
 <meta property="my:tw" content="on"/>
 <meta property="my:in" content="on"/>
-  <meta property="og:locale" content="en_US"/>
+<meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="www.womenandchildrenfirst.org.uk"/>
 
- <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <!-- template css -->
 
   <link rel="stylesheet" href="/templates/wcf/css/layout.css" type="text/css" />
   <link rel="stylesheet" href="/templates/wcf/css/template.css" type="text/css" />
   <link rel="stylesheet" href="/templates/wcf/css/content.css" type="text/css" />
-<script language="JavaScript" src="/templates/wcf/js/gen_validatorv4.js"
+  <script language="JavaScript" src="/templates/wcf/js/gen_validatorv4.js"
     type="text/javascript" xml:space="preserve"></script>
-    
-    <!-- START OF NEW CODE  -->
-      <script src="js/tracking.js" type="text/javascript"></script>
-    <!-- END OF NEW CODE-->
+
+  <!-- Google Analytics Tracking Code moved into header -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1925910-3']);
+    <!--  _gaq.push(['_setAccount', 'UA-36812301-1']); -->
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Google Analytics Social Button Tracking added -->
+    <script src="js/ga_social_tracking.js"></script>
+
+    <!-- new reference to tracking code  -->
+    <script src="js/tracking.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -210,18 +225,28 @@ window.addEvent('load', function() {
 </ul>
 
 <h3>Notes</h3>
-<p>To add tracking for files, simply place <a href="https://github.com/sofer/work/blob/gh-pages/js/tracking.js">tracking.js</a> inside the head tags at any point after loading jquery as follows:</p> 
+<p>To add tracking for files, simply place **<a href="https://github.com/sofer/work/blob/gh-pages/js/tracking.js"><u>tracking.js</u></a>** inside the head tags at any point after loading jquery as follows:</p> 
 
 <code>&lt;script src=&quot;&lt;path-to-js-files&gt;/tracking.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</code>
 
-<p>Remove the second line of tracking.js and uncomment the third line. Then load tracking.js and this page (with the path amended as above and the GA account and domain amended) onto the womenandchildrenfirst.org.uk domain, in order for google to start tracking file clicks.</p></p>
+<p>Remove the second line of tracking.js and uncomment the third line. Then add tracking.js to any page on which you want GA to work.</p></p>
 
 <p>The list of file paths is on the first line of the tracking.js file and can be amended. Use lower case only in the definitions (although the files themselves can be upper or mixed case, too). pdf, ppt, doc, docx, pptx, xls and xlsx are all currently recognised.</p>
 
 <p>Any links outside the current host will be ignored for tracking purposes.</p>
 
-<p>It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p>
+<p>tracking.js relies on the presence of jquery and the GA library. It looks like there is a bit of namespace conflict between jQuery and mootools, so we are using $jpcc in place of $.</p>
 
+<p>We have also moved the GA code--which is invoked asynchronously--to the bottom of the header and added a call to &lt;ga_social_tracking.js&gt;.</p>
+
+<p>At present, the Facebook 'like' button has been embedded synchronously. It is possible that you may want to change this in future, but for now  
+a call to <code>_ga.trackFacebook();</code> can added just before the closing &lt;body&gt; tag. See also <a href="https://developers.facebook.com/docs/reference/javascript/"><u>these notes on adding facebook to a page</u></a>.</p>
+
+<p>Meanwhile, from the Google developers website: <em>"Google Analytics provides integrated reporting for the Google+ Badge and +1 Button. This means if you have implemented ga.js and either a +1 Button or Google+ Badge on the same page, all +1 and Badge social interactions will be automatically reported"</em>. See more <a href="https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingSocial"><u>here</u></a>.
+
+<p>We have not implemented the twitter or linkedin tracking yet, but recommend that somebody implements the changes outlined above first and can confirm that everything is working as expected before proceeding further.</p>
+
+<p>Vimeo integration may be a bit trickier. Vimeo is usually loaded in an iframe. Tracking content embedded on a third-party site in an iframe is not trivial. There are workarounds, such as using an in-page image that require a user to click in order to view the video, or embedding additional in-page controls. We will hold off doing more work on this until we know more about the approach that is going to be used in this case.</p>
 
 <div class="attachmentsContainer">
 
@@ -304,18 +329,12 @@ window.addEvent('load', function() {
   </div>
 </div>
   </div>
-  <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36812301-1']);
-  _gaq.push(['_trackPageview']);
+  <!-- Google Analytics/Facebook tracking -->
+  <script>
+    _ga.trackFacebook();
+  </script>
+  
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 </body>
 </html>
